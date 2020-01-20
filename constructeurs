@@ -1,0 +1,60 @@
+using System;
+
+namespace constructeurs
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            Building building = new Building(6); // objet
+            Console.Write("Number of floors : ");
+            Console.WriteLine(building.GetFloorCount());
+            Building MaxHeightOfTheFloors = new Building(50.0, 15);
+            Console.Write("Max height floor : ");
+            Console.WriteLine(MaxHeightOfTheFloors.GetFloorMaxSize());
+            Building SizeOfBuilding = new Building(5);
+            Console.Write("Building size : ");
+            Console.WriteLine(SizeOfBuilding.GetSize());
+            
+
+            
+        }
+
+    }
+
+    public class Building
+    {
+        private double _height;
+        private int _numberFloor;
+
+        public Building(double height, int numberFloor)
+        {
+            
+            _height = height;
+            
+            _numberFloor = numberFloor;
+        }
+
+        public Building (int numberFloor)
+        {
+            _numberFloor = numberFloor;
+            _height = 3 * numberFloor;
+        }
+
+        public double GetFloorMaxSize()
+        {
+            return _height / _numberFloor;
+        }
+
+        public double GetFloorCount() 
+        {
+            return _numberFloor;
+        }
+
+        public double GetSize()
+        {
+            return _height;
+        }
+    }
+}
