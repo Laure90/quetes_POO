@@ -1,0 +1,104 @@
+using System;
+
+namespace Heritage_classification
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {            
+            Human human = new Human("Human");
+            human.Eat();
+            human.Move();
+            human.GestationType();
+            Chimpanzee chimpanzee = new Chimpanzee("Chimpanzee");
+            chimpanzee.Eat();
+            chimpanzee.Move();
+            chimpanzee.GestationType();
+            Elephant elephant = new Elephant("Elephant");
+            elephant.Eat();
+            elephant.Move();
+            elephant.GestationType();
+            Turtle turtle = new Turtle("Turtle");
+            turtle.Eat();
+            turtle.Move();
+            turtle.GestationType();
+            Lizard lizard = new Lizard("Lizard");
+            lizard.Eat();
+            lizard.Move();
+            lizard.GestationType();
+        }
+    }
+
+    public abstract class Animal
+    {
+        protected string _name;
+        protected short _legsCount;
+        protected bool _hairy;
+        protected string _gestationType;
+
+        public Animal(string name, short legsCount, bool hairy, string gestationType)
+        {
+            _name = name;
+            _legsCount = legsCount;
+            _hairy = hairy;
+            _gestationType = gestationType;
+        }
+
+        public void Move()
+        {
+            Console.WriteLine("It move with his " + _legsCount + " legs");
+        }
+
+        public void Eat()
+        {
+            Console.WriteLine(_name + " eats");
+        }
+
+        public void GestationType()
+        {
+            Console.WriteLine(_name + " is a(n) " + _gestationType);
+        }
+    }
+
+    public class Human : Animal
+    {
+        public Human (string name) : base (name, 2, true, "vivipare")
+        {
+            Console.WriteLine(_name + " is hairy ? " + _hairy);
+        }        
+    }
+
+
+    public class Chimpanzee : Animal
+    {
+        public Chimpanzee(string name) : base (name, 4, true, "vivipare")
+        {
+            Console.WriteLine(_name + " is " + _hairy);
+        }
+    }
+
+    public class Elephant : Animal
+    {
+        public Elephant(string name) : base (name, 4, true, "vivipare")
+        {
+            Console.WriteLine(_name + " is " + _hairy);
+        }
+    }
+
+    public class Turtle : Animal
+    {
+        public Turtle(string name) : base(name, 4, false, "ovipare")
+        {
+            Console.WriteLine(_name + " is " + _hairy);
+        }
+    }
+
+    public class Lizard : Animal
+    {
+        public Lizard(string name) : base(name, 4, false, "ovipare")
+        {
+            Console.WriteLine(_name + " is " + _hairy);
+        }
+    }   
+
+}
