@@ -44,14 +44,14 @@ namespace Heritage_classification
             _gestationType = gestationType;
         }
 
-        public void Move()
+        public virtual void Move()
         {
             Console.WriteLine("It move with his " + _legsCount + " legs");
         }
 
         public void Eat()
         {
-            Console.WriteLine(_name + " eats");
+            Console.WriteLine(_name + " eats with his mouth");
         }
 
         public void GestationType()
@@ -73,7 +73,7 @@ namespace Heritage_classification
     {
         public Chimpanzee(string name) : base (name, 4, true, "vivipare")
         {
-            Console.WriteLine(_name + " is " + _hairy);
+            Console.WriteLine(_name + " is hairy ? " + _hairy);
         }
     }
 
@@ -81,7 +81,7 @@ namespace Heritage_classification
     {
         public Elephant(string name) : base (name, 4, true, "vivipare")
         {
-            Console.WriteLine(_name + " is " + _hairy);
+            Console.WriteLine(_name + " is hairy ? " + _hairy);
         }
     }
 
@@ -89,7 +89,12 @@ namespace Heritage_classification
     {
         public Turtle(string name) : base(name, 4, false, "ovipare")
         {
-            Console.WriteLine(_name + " is " + _hairy);
+            Console.WriteLine(_name + " is hairy ? " + _hairy);
+        }
+
+        public override void Move()
+        {
+            Console.WriteLine("It swim with his " + _legsCount + " legs");
         }
     }
 
@@ -97,8 +102,8 @@ namespace Heritage_classification
     {
         public Lizard(string name) : base(name, 4, false, "ovipare")
         {
-            Console.WriteLine(_name + " is " + _hairy);
+            Console.WriteLine(_name + " is hairy ? " + _hairy);
         }
-    }   
+    }
 
 }
